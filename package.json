@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "prepare": "husky install",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -21,7 +22,16 @@
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
     "eslint-config-prettier": "^8.3.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
     "prettier": "^2.3.2",
     "typescript": "4.4.2"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "bash -c 'yarn type-check'",
+      "next lint --fix"
+    ],
+    "*.{ts,tsx,css,md}": "prettier --write"
   }
 }
