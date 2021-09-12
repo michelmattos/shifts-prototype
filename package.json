@@ -11,7 +11,7 @@
     "type-check": "tsc",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "test:unit": "jest --watch",
+    "test:unit": "jest --runInBand --watch",
     "test:unit:ci": "jest --ci",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -s public/"
