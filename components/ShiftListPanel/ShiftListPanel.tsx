@@ -49,7 +49,10 @@ export const ShiftListPanel = ({ shifts, onRemove }: ShiftListPanelProps) => {
               <Button
                 variant="link"
                 textStyle="roboto-regular"
-                onClick={() => onRemove(selectedShifts)}
+                onClick={() => {
+                  onRemove(selectedShifts)
+                  setSelectedShifts([])
+                }}
               >
                 <Text
                   as="span"
